@@ -52,7 +52,7 @@ const Footer = () => {
             viewport={{ once: true }}
             className="text-primary-foreground/50 text-sm flex items-center gap-1"
           >
-            © {currentYear} • Feito por <a href="mailto:2fc.data@gmail.com" className="hover:underline">2fc.data</a>
+            © {currentYear} • by <a href="mailto:2fc.data@gmail.com" className="hover:underline">2fc.data</a>
           </motion.p>          
         </div>
       </div>

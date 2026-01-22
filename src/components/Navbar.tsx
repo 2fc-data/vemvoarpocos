@@ -27,8 +27,8 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-navy/95 backdrop-blur-md shadow-lg py-3"
-          : "bg-transparent py-6"
+        ? "bg-navy/95 backdrop-blur-md shadow-lg py-3"
+        : "bg-transparent py-6"
         }`}
     >
       <div className="container mx-auto px-4">
@@ -44,7 +44,7 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-primary-foreground/80 hover:text-gold transition-colors font-medium"
+                className="text-primary-foreground/80 md:hover:text-gold transition-colors font-medium"
               >
                 {link.label}
               </a>
@@ -72,17 +72,17 @@ const Navbar = () => {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden mt-4 pb-4 border-t border-primary-foreground/10"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="absolute top-full left-0 right-0 bg-navy/95 backdrop-blur-md border-t border-white/10 px-4 pb-8 md:hidden shadow-xl"
             >
-              <div className="flex flex-col gap-4 pt-4">
+              <div className="flex flex-col gap-6 pt-6">
                 {navLinks.map((link) => (
                   <a
                     key={link.href}
                     href={link.href}
-                    className="text-primary-foreground/80 hover:text-gold transition-colors font-medium"
+                    className="text-primary-foreground/90 active:text-gold font-medium text-lg block transition-none"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.label}
@@ -92,7 +92,8 @@ const Navbar = () => {
                   href="https://wa.me/5535999309770?text=Olá! Gostaria de agendar um voo!"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-gold px-6 py-3 rounded-full font-semibold text-center"
+                  className="btn-gold px-6 py-4 rounded-full font-semibold text-center mt-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Agendar Voo
                 </a>
